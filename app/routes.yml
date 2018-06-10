@@ -1,0 +1,7 @@
+"GET":
+  "/" : "posts#index"
+  "/hello" : "main#hello"
+  "/posts" : "posts#index"
+  "/posts/new" : "posts#new"
+"POST":
+  "/posts" : "posts#create"

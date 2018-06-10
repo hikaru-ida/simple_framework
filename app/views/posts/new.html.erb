@@ -1,0 +1,13 @@
+<form action="/posts" method="post" name="post">
+  <input type="text" name="title">
+  <input type="text" name="content">
+  <input type="submit" name="submit" value="create post">
+</form>
+<div>
+  <% @posts.each do |post| %>
+   <div>
+     <%= post.title %>
+     <%= post.content %>
+   </div>
+  <% end %>
+</div>
