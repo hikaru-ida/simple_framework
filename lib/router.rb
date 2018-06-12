@@ -12,7 +12,6 @@ class Router
     method = env['REQUEST_METHOD']
     if METHODS.include?(method) && routes.key?(method) && routes[method].key?(path)
       params = Rack::Request.new(env).params
-      p params
       ret = ctrl(routes[method][path], method, params).call
       if ret.redirect_to
         ctrl(routes["GET"][ret.redirect_to], "GET", params).call

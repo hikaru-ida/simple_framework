@@ -10,7 +10,6 @@ if File.exist?(db_config_file)
   DB = Sequel.connect(config)
   Sequel.extension :migration
 end
-p DB
 
 Dir[File.join(File.dirname(__FILE__), 'lib', '*.rb')].each {|file| require file }
 Dir[File.join(File.dirname(__FILE__), 'app', '**', '*.rb')].each {|file| require file }

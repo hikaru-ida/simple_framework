@@ -9,9 +9,15 @@ class PostsController < Controller
   end
 
   def create
-    title = self.params['title']
-    content = self.params['content']
-    Post.create(title: title, content: content)
+    p self.params['post']
+    #title = self.params['title']
+    #content = self.params['content']
+    #Post.create(title: title, content: content)
+    Post.create(post_params)
     self.redirect_to = '/posts/new'
+  end
+
+  def post_params
+    self.params.require('post').permit('title')
   end
 end
